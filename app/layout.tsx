@@ -21,7 +21,7 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className="w-4/5 min-h-screen mx-auto sm:w-3/5 lg:w-1/2">
+        <main className="w-4/5 min-h-screen my-4 mx-auto sm:w-3/5 lg:w-1/2">
           {children}
         </main>
       </body>
