@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="shadow-lg md:h-[70px] md:flex md:items-center">
+    <nav className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white shadow-lg md:h-[70px] md:flex md:items-center">
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -24,15 +25,17 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="hidden md:flex space-x-4">
-            <a href="/" className=" hover:text-blue-500">
+            <ThemeToggle />
+            {/* <a href="/" className=" hover:text-blue-500">
               Home
-            </a>
-            <Link href="/about" className=" hover:text-blue-500">
+            </a> */}
+
+            {/* <Link href="/about" className=" hover:text-blue-500">
               About
             </Link>
             <Link href="/projects" className=" hover:text-blue-500">
               Projects
-            </Link>
+            </Link> */}
           </div>
           <div className="md:hidden">
             <button
@@ -57,15 +60,22 @@ export default function Navbar() {
           </div>
         </div>
         {isOpen && (
-          <div className="md:hidden absolute left-0 flex flex-col bg-white w-full h-fit shadow-lg p-4">
-            <Link
+          <div
+            className={`md:hidden absolute left-0 w-full transition-all duration-300 ease-in-out overflow-hidden shadow-lg ${
+              isOpen
+                ? "opacity-100 max-h-96 p-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                : "opacity-0 max-h-0 p-0"
+            }`}
+          >
+            <ThemeToggle />
+            {/* <Link
               href="/"
               className=" hover:text-blue-500"
               onClick={handleLinkClick}
             >
               Home
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="/about"
               className=" hover:text-blue-500"
               onClick={handleLinkClick}
@@ -78,7 +88,7 @@ export default function Navbar() {
               onClick={handleLinkClick}
             >
               Projects
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>
