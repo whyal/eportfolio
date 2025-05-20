@@ -2,7 +2,8 @@
 const nextConfig = {
   output: "export",
   basePath: "/eportfolio",
-  assetPrefix: "/eportfolio",
+  assetPrefix: "/eportfolio/",
+  trailingSlash: true,
   images: {
     remotePatterns: [
       {
