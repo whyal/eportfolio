@@ -1,10 +1,12 @@
+// next.config.mjs
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
   basePath: "/eportfolio",
-  assetPrefix: "/eportfolio/",
   trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
